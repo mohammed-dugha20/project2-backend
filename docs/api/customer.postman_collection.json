@@ -1,0 +1,202 @@
+{
+  "info": {
+    "name": "Customer API",
+    "description": "Postman collection for Customer-related API endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get My Properties",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+        ],
+        "url": { "raw": "{{base_url}}/customer/properties", "host": ["{{base_url}}"], "path": ["customer", "properties"] }
+      }
+    },
+    {
+      "name": "Create Property",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Sample Property\",\n  \"description\": \"Description here\",\n  \"price\": 100000\n}"
+        },
+        "url": { "raw": "{{base_url}}/customer/properties", "host": ["{{base_url}}"], "path": ["customer", "properties"] }
+      }
+    },
+    {
+      "name": "Update Property",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Property\",\n  \"description\": \"Updated description\",\n  \"price\": 120000\n}"
+        },
+        "url": { "raw": "{{base_url}}/customer/properties/1", "host": ["{{base_url}}"], "path": ["customer", "properties", "1"] }
+      }
+    },
+    {
+      "name": "Delete Property",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+        ],
+        "url": { "raw": "{{base_url}}/customer/properties/1", "host": ["{{base_url}}"], "path": ["customer", "properties", "1"] }
+      }
+    },
+    {
+      "name": "Update Property Contact Visibility",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contact_visible\": true\n}"
+        },
+        "url": { "raw": "{{base_url}}/customer/properties/1/contact-visibility", "host": ["{{base_url}}"], "path": ["customer", "properties", "1", "contact-visibility"] }
+      }
+    },
+    {
+      "name": "Get Requests Received on My Property",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+        ],
+        "url": { "raw": "{{base_url}}/customer/properties/1/requests", "host": ["{{base_url}}"], "path": ["customer", "properties", "1", "requests"] }
+      }
+    },
+    {
+      "name": "Respond to Property Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"accepted\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/customer/properties/1/requests/1/respond", "host": ["{{base_url}}"], "path": ["customer", "properties", "1", "requests", "1", "respond"] }
+      }
+    },
+    {
+      "name": "Get My Sent Requests",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+        ],
+        "url": { "raw": "{{base_url}}/customer/requests", "host": ["{{base_url}}"], "path": ["customer", "requests"] }
+      }
+    },
+    {
+      "name": "Update Sent Request",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"message\": \"Updated request message\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/customer/requests/1", "host": ["{{base_url}}"], "path": ["customer", "requests", "1"] }
+      }
+    },
+    {
+      "name": "Delete Sent Request",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+        ],
+        "url": { "raw": "{{base_url}}/customer/requests/1", "host": ["{{base_url}}"], "path": ["customer", "requests", "1"] }
+      }
+    },
+    {
+      "name": "Get Finishing Requests",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+        ],
+        "url": { "raw": "{{base_url}}/customer/finishing-requests", "host": ["{{base_url}}"], "path": ["customer", "finishing-requests"] }
+      }
+    },
+    {
+      "name": "Get Finishing Request by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+        ],
+        "url": { "raw": "{{base_url}}/customer/finishing-requests/1", "host": ["{{base_url}}"], "path": ["customer", "finishing-requests", "1"] }
+      }
+    },
+    {
+      "name": "Create Finishing Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Finishing Request\",\n  \"details\": \"Details here\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/customer/finishing-requests", "host": ["{{base_url}}"], "path": ["customer", "finishing-requests"] }
+      }
+    },
+    {
+      "name": "List Finishing Companies (Public)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/finishing-companies", "host": ["{{base_url}}"], "path": ["finishing-companies"] }
+      }
+    },
+    {
+      "name": "Get Finishing Company by ID (Public)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/finishing-companies/1", "host": ["{{base_url}}"], "path": ["finishing-companies", "1"] }
+      }
+    },
+    {
+      "name": "Send Request to Property (Public, Auth Required)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"message\": \"Request message\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/properties/1/requests", "host": ["{{base_url}}"], "path": ["properties", "1", "requests"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "base_url", "value": "http://localhost/api" },
+    { "key": "token", "value": "" }
+  ]
+}
